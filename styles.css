@@ -75,7 +75,7 @@
 }
 
 
-.landing-page-btn {
+.landing-page-btn,#pop-up-submit-button {
     background-color: var(--primary-color);
     gap: 15px;
     color: white;
@@ -86,7 +86,7 @@
 }
 
 
-.landing-page-btn:hover {
+.landing-page-btn:hover , #pop-up-submit-button:hover{
     background-color: white;
     color: var(--primary-color);
     cursor: pointer;
@@ -107,3 +107,109 @@
     font-weight: 800;
     font-size: 28px;
 }
+
+
+#pop-up {
+    position: absolute;
+    border: 10px solid black;
+    /* border-radius: 10px; */
+    width: 450px;
+    height: 525px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    margin: auto;
+    visibility: hidden;
+    
+}
+
+
+.pop-up-top-div {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    font-weight: 800;
+    /* letter-spacing: 1px; */
+    font-size: 20px;
+}
+
+#close-pop-up-button {
+    background-color: red;
+    color :white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border : 5px solid red;
+    cursor: pointer;
+    font-weight: 800;
+   
+    font-size: 20px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-weight: 500;
+    padding: 10px;
+    
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+form input {
+    width: 95%;
+    height: 2em;
+}
+
+fieldset {
+    padding: 20px;
+    border: 3px solid black;
+}
+
+
+legend {
+    font-weight: bold;
+}
+
+#pop-up-submit-button-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+#form-flexbox-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.book-read-checkbox-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+
+    align-items: center;
+    padding-left: 10px;
+    padding-top: 3px;
+    
+}
+
+#read {
+    width: 10%;
+    height: 1.3em;
+    accent-color: black;
+}
+
+.form-element {
+    padding: 10px;
+}
+
