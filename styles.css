@@ -10,9 +10,13 @@
 }
 
 
-
-
-.navbar {
+body ::selection {
+    background: black;
+    color: white;
+  }
+  
+  
+  .navbar {
     width: 85vw;
     display: flex;
     flex-direction: row;
@@ -166,6 +170,7 @@ form {
 form input {
     width: 95%;
     height: 2em;
+    padding-left: 4px;
 }
 
 fieldset {
