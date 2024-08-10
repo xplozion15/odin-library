@@ -1,47 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookish</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="navbar">
         <div>
-            <p>BOOKISH</p>
+            <p id="bookish-logo">BOOKISH</p>
         </div>
 
-        <div>
-            <p>HOW TO USE?</p>
-            <p>ABOUT US</p>
-        </div>
+        <div class="navbar-right-div">
 
-        <div>
-            <button>ADD A BOOK!</button>
+            <div class="navbar-links">
+                <p>HOW TO USE?</p>
+                <p>ABOUT US</p>
+            </div>
+
+            <div>
+                <button class="landing-page-btn">ADD A BOOK!</button>
+            </div>
         </div>
     </div>
 
 
     <div class="landing-section">
-        
+
         <div class="landing-section-left">
-            <p>WELCOME TO THE BOOKISH!</p>
-            <p>A LIGHTWEIGHT BOOK TRACKING APP</p>
-            <p>Your go-to app for effortless book tracking. Whether you're a voracious reader or a casual book lover, Bookish makes it simple to keep tabs on your reading journey. Enjoy a streamlined and intuitive experience that keeps you organized and on top of your literary adventures!</p>
+            <p class="landing-page-heading">WELCOME TO THE BOOKISH!</p>
+            <p class="landing-page-heading">A LIGHTWEIGHT BOOK TRACKING APPLICATION FOR READERS.</p>
+            <p>Your go-to app for effortless book tracking. Whether you're a voracious reader or a casual book lover,
+                Bookish makes it simple to keep tabs on your reading journey. Enjoy a streamlined and intuitive
+                experience that keeps you organized and on top of your literary adventures!</p>
+            <button class="landing-page-btn">ADD A BOOK!</button>
 
         </div>
 
         <div class="landing-section-left">
-            <img src="./images/landing-page-image.jpg" alt="landing-page-image" class="landing-page-image" width="600" height="459">
+            <img src="./images/landing-page-image.jpg" alt="landing-page-image" class="landing-page-image" width="600"
+                height="440">
 
         </div>
     </div>
 
 
-    
+    <div id="pop-up">
+        <div class="pop-up-top-div">
+            <p>ADD BOOK</p>
+            <button id="close-pop-up-button">X</button>
+        </div>
+        <hr>
+
+        <form action="">
+            <fieldset>
+
+                <legend>Book Details</legend>
+
+                <div class="form-element">
+                    <div><label for="">Title</label></div>
+                    <div><input type="text" minlength="1" maxlength="25" placeholder="What is the name of the book?" required></div>
+                </div>
+
+                <div class="form-element">
+                    <div><label for="">Author</label></div>
+                    <div><input type="text" minlength="1" maxlength="16" placeholder="Who wrote this book?" required></div>
+                </div>
+
+                <div class="form-element">
+                    <div><label for="">Pages</label></div>
+                    <div><input type="number" min="1" max="10000" placeholder="How many pages?" required></div>
+                </div>
+
+                <div class="form-element">
+                    <div><label for="">Stars</label></div>
+                    <div><input type="number" placeholder="Rate your book?" min="1" max="5" required></div>
+                </div>
+
+                <div class="book-read-checkbox-div" class="form-element">
+                    <label for="read">Read?</label>
+                    <input type="checkbox" name="read" id="read">
+                </div>
+            </fieldset>
+            
+            <div id="pop-up-submit-button-div">
+                <button id="pop-up-submit-button">SUBMIT</button>
+            </div>
+            
+        </form>
+    </div>
+
+
 
 
     <script src="app.js"></script>
 </body>
+
 </html>
