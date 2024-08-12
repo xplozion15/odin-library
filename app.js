@@ -11,6 +11,9 @@ let bookishLogo = document.querySelector("#bookish-logo");
 
 
 
+
+
+
 bookishLogo.addEventListener("click",()=>{
     window.location.reload()
 });
@@ -210,7 +213,7 @@ closePopUpButton.addEventListener("click", () => {
 
 popUpSubmitButton.addEventListener("click", () => {
 
-    
+   
     removeLandingPageElements()
 
 
@@ -219,7 +222,7 @@ popUpSubmitButton.addEventListener("click", () => {
     popUp.style.visibility = "hidden";
 
     addBookToLibrary();
-    event.preventDefault();
+    // event.preventDefault();
 
 
 })
