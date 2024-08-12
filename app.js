@@ -26,7 +26,6 @@ bookishLogo.addEventListener("click", () => {
 
 landingPageButtons.forEach(button => {
     button.addEventListener("click", () => {
-        blurBodyOpacity();
         displayPopUp();
     });
 });
@@ -35,20 +34,16 @@ landingPageButtons.forEach(button => {
 
 closePopUpButton.addEventListener("click", () => {
     popUp.style.visibility = "hidden";
-    landingSection.style.opacity = 1;
-    navbar.style.opacity = 1;
 });
 
 
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Prevent default form submission
+form.addEventListener("submit", (event) => {  // Prevent default form submission
+    event.preventDefault(); 
     removeLandingPageElements();
-    dontBlurBodyOpacity();
     popUp.style.visibility = "hidden";
     addBookToLibrary();
 });
-
 
 
 
@@ -61,15 +56,13 @@ function createNewBook(title, author, noOfPages, noOfStars, isBookRead) {
     this.isBookRead = isBookRead;
 }
 
-
-
 function addBookToLibrary() {
-    // do stuff here
+    
     let newObject = new createNewBook(title.value, author.value, pages.value, stars.value, read.checked ? "on" : "off");
     myLibrary.push(newObject);
 
     let bookContainer = document.createElement("div");
-    bookContainer.style.cssText = ";";
+    bookContainer.style.cssText = "width:80vw;margin:auto;";
 
     body.appendChild(bookContainer);
 
@@ -78,7 +71,7 @@ function addBookToLibrary() {
         let createBookDiv = document.createElement("div");
         createBookDiv.classList.add("book-div");
 
-        // arrayIndexNo = createBookDiv.dataset.indexNumber - 1;
+       
         arrayIndexNo = myLibrary.length - 1;
 
         createBookDiv.setAttribute("data-index-number", `${arrayIndexNo}`);
@@ -111,17 +104,11 @@ function addBookToLibrary() {
 
         deleteBook.textContent = "DELETE";
 
-
-
-
         deleteBook.addEventListener("click", () => {
             createBookDiv.remove();
             arrayIndexNo = Number(createBookDiv.dataset.indexNumber);
             myLibrary[arrayIndexNo] = null;
         });
-
-
-
 
         bookIsRead.addEventListener("click", () => {
             let parentContainer = bookIsRead.parentElement;
@@ -132,7 +119,9 @@ function addBookToLibrary() {
                 bookIsRead.textContent = "NOT READ";
                 bookIsRead.style.backgroundColor = "blue";
                 bookIsRead.style.border = "2px solid blue";
-            } else if (myLibrary[grandParentContainer.dataset.indexNumber].isBookRead === "off") {
+            } 
+            
+            else if (myLibrary[grandParentContainer.dataset.indexNumber].isBookRead === "off") {
                 myLibrary[grandParentContainer.dataset.indexNumber].isBookRead = "on";
                 bookIsRead.textContent = "READ";
                 bookIsRead.style.backgroundColor = "green";
@@ -150,22 +139,6 @@ function removeLandingPageElements() {
 }
 
 
-
-function blurBodyOpacity() {
-    landingSection.style.opacity = 0.1;
-    navbar.style.opacity = 0.1;
-    
-}
-
-
-function dontBlurBodyOpacity() {
-    landingSection.style.opacity = 1;
-    navbar.style.opacity = 1;
-}
-
 function displayPopUp() {
-    landingSection.style.opacity = 0.1;
-    navbar.style.opacity = 0.1;
-    popUp.style.cssText = "visibility: visible; background-color: white; color:black;";
-   
+    popUp.style.cssText = "visibility: visible; background-color: white; color:black";
 }
