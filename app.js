@@ -39,7 +39,7 @@ closePopUpButton.addEventListener("click", () => {
 
 
 form.addEventListener("submit", (event) => {  // Prevent default form submission
-    event.preventDefault(); 
+    event.preventDefault();
     removeLandingPageElements();
     popUp.style.visibility = "hidden";
     addBookToLibrary();
@@ -47,18 +47,22 @@ form.addEventListener("submit", (event) => {  // Prevent default form submission
 
 
 
-// functions
-function createNewBook(title, author, noOfPages, noOfStars, isBookRead) {
-    this.title = title;
-    this.author = author;
-    this.noOfPages = noOfPages;
-    this.noOfStars = noOfStars;
-    this.isBookRead = isBookRead;
+// class for creating book
+
+class CreateNewBook {
+    constructor(title, author, noOfPages, noOfStars, isBookRead) {
+        this.title = title;
+        this.author = author;
+        this.noOfPages = noOfPages;
+        this.noOfStars = noOfStars;
+        this.isBookRead = isBookRead;
+    }
 }
 
+
 function addBookToLibrary() {
-    
-    let newObject = new createNewBook(title.value, author.value, pages.value, stars.value, read.checked ? "on" : "off");
+
+    let newObject = new CreateNewBook(title.value, author.value, pages.value, stars.value, read.checked ? "on" : "off");
     myLibrary.push(newObject);
 
     let bookContainer = document.createElement("div");
@@ -71,7 +75,7 @@ function addBookToLibrary() {
         let createBookDiv = document.createElement("div");
         createBookDiv.classList.add("book-div");
 
-       
+
         arrayIndexNo = myLibrary.length - 1;
 
         createBookDiv.setAttribute("data-index-number", `${arrayIndexNo}`);
@@ -119,8 +123,8 @@ function addBookToLibrary() {
                 bookIsRead.textContent = "NOT READ";
                 bookIsRead.style.backgroundColor = "blue";
                 bookIsRead.style.border = "2px solid blue";
-            } 
-            
+            }
+
             else if (myLibrary[grandParentContainer.dataset.indexNumber].isBookRead === "off") {
                 myLibrary[grandParentContainer.dataset.indexNumber].isBookRead = "on";
                 bookIsRead.textContent = "READ";
