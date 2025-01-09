@@ -136,7 +136,7 @@ function addBookToLibrary() {
 }
 
 
-
+//nothing
 
 function removeLandingPageElements() {
     landingSection.remove();
