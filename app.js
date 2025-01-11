@@ -37,11 +37,11 @@ closePopUpButton.addEventListener("click", () => {
 
 submitButton.addEventListener("click", () => {
   if (titleInput.validity.valueMissing) {
-    titleInput.setCustomValidity("enter some title? :)");
+    titleInput.setCustomValidity("Please enter some title? :)");
   } else if (authorInput.validity.valueMissing) {
     authorInput.setCustomValidity(":) Please enter a author's name.");
   } else if (pagesInput.validity.valueMissing) {
-    pagesInput.setCustomValidity(":) Please enter a title.");
+    pagesInput.setCustomValidity(":) Please enter no of pages.");
   } else if (starsInput.validity.valueMissing) {
     starsInput.setCustomValidity(":) Please enter stars value.");
   }
