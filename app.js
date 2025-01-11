@@ -35,18 +35,29 @@ closePopUpButton.addEventListener("click", () => {
   popUp.style.visibility = "hidden";
 });
 
+submitButton.addEventListener("click", () => {
+  if (titleInput.validity.valueMissing) {
+    titleInput.setCustomValidity("enter some title? :)");
+  } else if (authorInput.validity.valueMissing) {
+    authorInput.setCustomValidity(":) Please enter a author's name.");
+  } else if (pagesInput.validity.valueMissing) {
+    pagesInput.setCustomValidity(":) Please enter a title.");
+  } else if (starsInput.validity.valueMissing) {
+    starsInput.setCustomValidity(":) Please enter stars value.");
+  }
+});
+
 titleInput.addEventListener("input", () => {
   titleInput.setCustomValidity("");
+
   if (titleInput.checkValidity()) {
     return;
   }
 
-  if (titleInput.validity.valueMissing) {
-    titleInput.setCustomValidity(":) Please enter a title.");
-  } else if (titleInput.validity.tooShort) {
-    titleInput.setCustomValidity("pls pls enter  3 or more characters");
+  if (titleInput.validity.tooShort) {
+    titleInput.setCustomValidity("pls pls enter  3 or more characters :)");
   } else if (titleInput.validity.tooLong) {
-    titleInput.setCustomValidity("pls pls enter less than 25 characters");
+    titleInput.setCustomValidity("pls pls enter less than 25 characters :)");
   }
 });
 
@@ -58,10 +69,12 @@ authorInput.addEventListener("input", () => {
   }
 
   if (authorInput.validity.tooShort) {
-    authorInput.setCustomValidity("pls pls enter  3 or more characters");
+    authorInput.setCustomValidity("pls pls enter  3 or more characters :)");
   } else if (authorInput.validity.tooLong) {
-    authorInput.setCustomValidity("pls pls enter less than 25 characters");
+    authorInput.setCustomValidity("pls pls enter less than 25 characters :)");
   }
+
+  authorInput.reportValidity();
 });
 
 pagesInput.addEventListener("input", () => {
@@ -71,9 +84,11 @@ pagesInput.addEventListener("input", () => {
   }
 
   if (pagesInput.validity.rangeUnderflow) {
-    pagesInput.setCustomValidity("pls pls enter a bigger number than 0");
+    pagesInput.setCustomValidity("pls pls enter a bigger number than 0 :)");
   } else if (pagesInput.validity.rangeOverflow) {
-    pagesInput.setCustomValidity("pls pls enter a smaller number than 10000");
+    pagesInput.setCustomValidity(
+      "pls pls enter a smaller number than 10000 :)"
+    );
   }
 });
 
@@ -84,14 +99,13 @@ starsInput.addEventListener("input", () => {
   }
 
   if (starsInput.validity.rangeUnderflow) {
-    starsInput.setCustomValidity("pls pls enter a bigger number than 0");
+    starsInput.setCustomValidity("pls pls enter a bigger number than 0 :)");
   } else if (starsInput.validity.rangeOverflow) {
-    starsInput.setCustomValidity("pls pls enter a smaller number than 5");
+    starsInput.setCustomValidity("pls pls enter a smaller number than 5 :)");
   }
 });
 
 form.addEventListener("submit", (event) => {
-  // Prevent default form submission
   event.preventDefault();
   removeLandingPageElements();
   popUp.style.visibility = "hidden";
