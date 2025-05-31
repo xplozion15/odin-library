@@ -2,7 +2,7 @@
 
 Learnt about Object constructors, array methods , dom manipulations and events in this project.
 
-Live link - https://abhilash15500.github.io/odin-library/
+Live link - https://xplozion15.github.io/odin-library/
 
 
 Image credits - 
